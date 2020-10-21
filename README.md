@@ -50,6 +50,57 @@ A minimal introduction is presented above. Users are strongly advised to read fu
 
 
 ## Creating a ROS Package
+Use `catkin_create_pkg` command to create a ROS package.
+```
+cd ros_ws/src
+catkin_create_pkg hello_ros rospy roscpp
+```
+Please follow the official ROS wiki page for future study [here](http://wiki.ros.org/ROS/Tutorials/CreatingPackage).
 
 
 ## Creating ROS Publisher and Subscriber in Python
+Publishers and subscribers are the backbones of the ROS framework. In the following subsections, we will create a publisher and subscriber for string datatype.
+
+### Creating a ROS Publisher
+```
+import rospy
+from std_msgs.msg import String
+
+def publisher():
+    pub = rospy.Publisher("my_ros_topic", String, queue_size=10)
+    rospy.init_node("publisher")
+    rate = rospy.Rate(10) # 10hz
+    index = 0 
+    while not rospy.is_shutdown():
+        hello_str = "hello world %d" % index
+        print hello_str
+        pub.publish(hello_str)
+        rate.sleep()
+        index += 1
+
+if __name__ == "__main__":
+    try:
+        publisher()
+    except rospy.ROSInterruptException:
+        pass
+```
+
+### Creating a ROS Subscriber
+```
+import rospy
+from std_msgs.msg import String
+
+def callback(data):
+    print data
+    
+def listener():
+    rospy.init_node("listener")
+    rospy.Subscriber("my_ros_topic", String, callback)
+    rospy.spin()
+
+if __name__ == "__main__":
+    listener()
+```
+
+Please follow the official ROS wiki page for future study [here](http://wiki.ros.org/ROS/Tutorials/WritingPublisherSubscriber%28python%29).
+
