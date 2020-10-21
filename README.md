@@ -3,7 +3,7 @@ This repository contains information for getting started with ROS and Baxter rob
 
 
 ## Prerequisites
-* Ubuntu 14.04 LTS
+* [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/)
 
 
 ## ROS Indigo and Baxter API Installation
@@ -22,6 +22,31 @@ sudo pip install --upgrade jupyter
 ```
 
 ## Basics of Python required for ROS
+Minimal introduction to Python (version 2.7).
+
+### Defining a variable
+```
+i = 0
+name = "Ravi"
+price = 1.5
+correct = True
+```
+
+### Loops
+```
+# repeat print statement 10 times or print 10 numbers starting from 0
+for i in range(10):
+    print i
+```
+
+### List
+A `list` is a powerful container to store various objects.
+```
+fruits = ["apple", "mango", "orange"]
+fruits.append("grape")
+```
+
+A minimal introduction is presented above. Users are strongly advised to read further!
 
 
 ## Creating a ROS Package
