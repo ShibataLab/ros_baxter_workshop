@@ -30,3 +30,8 @@
     <sup>Step 7</sup>
     </br>
 </p>
+
+
+## Note
+
+It is advised to install Ubuntu on a computer directly. VM should be used only for learning purposes.
