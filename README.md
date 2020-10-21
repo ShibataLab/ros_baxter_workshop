@@ -1,5 +1,9 @@
 # ros_baxter_workshop
-This repository contains information for getting started with ROS and Baxter robot.
+This repository contains information for getting started with ROS and Baxter robot. This repository assumes that you have a working Ubuntu OS.
+
+
+## Prerequisites
+* Ubuntu 14.04 LTS
 
 
 ## ROS Indigo and Baxter API Installation
